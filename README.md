@@ -94,26 +94,42 @@ npm run start
 
 ## 📄 API Endpoints
 
-> All endpoints are prefixed with `/api/v1` and secured via Bearer token authentication where applicable.
+All routes are prefixed with `/api/v1`.
 
-### 🧍 User & Auth
+### 🔹 User Endpoints
 
-| Method | Endpoint         | Description                        | Body Example |
-|--------|------------------|------------------------------------|--------------|
-| POST   | `/auth/register` | Register a new user                | `{ "name": "John Doe", "phone": "017...", "pin": "1234" }` |
-| POST   | `/auth/login`    | Login and get a JWT                | `{ "phone": "017...", "pin": "1234" }` |
-| GET    | `/users/allUsers`| Admin-only: Get all registered users | N/A          |
+| Method | Endpoint Description |
+|--------|----------------------|
+| GET | Add Money/ Deposit |
+| GET | My Wallet |
+| GET | Withdraw Money |
+| GET | Send Money |
 
-### 💰 Wallet
+### 🔹 Auth Endpoints
 
-| Method | Endpoint             | Description                          | Body Example |
-|--------|----------------------|--------------------------------------|--------------|
-| GET    | `/wallet/my-wallet`  | Get authenticated user's wallet info | N/A          |
-| POST   | `/wallet/send-money` | Transfer money to another user       | `{ "receiverPhone": "019...", "amount": 25 }` |
-| POST   | `/wallet/cash-in`    | Agent adds funds to user's wallet    | `{ "userPhone": "017...", "amount": 100 }` |
-| POST   | `/wallet/cash-out`   | User requests cash from an agent     | `{ "agentPhone": "018...", "amount": 50 }` |
+| Method | Endpoint Description |
+|--------|----------------------|
+| GET | Create-Account/Registration |
+| GET | login |
 
----
+### 🔹 Agent Endpoints
+
+| Method | Endpoint Description |
+|--------|----------------------|
+| GET | Cash-In |
+| GET | Cash-out |
+
+### 🔹 Admin Endpoints
+
+| Method | Endpoint Description |
+|--------|----------------------|
+| GET | Get All User |
+| GET | Block Wallets |
+| GET | Unblock Wallets |
+| GET | Get All Agent |
+| GET | Approved Agent |
+| GET | Suspend Agent |
+
 
 ## 📦 Postman Example
 
