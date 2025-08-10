@@ -1,4 +1,5 @@
 import type { Document } from "mongoose"
+import { Types } from "mongoose";
 
 export interface IDailyLimit {
   amount: number
@@ -7,7 +8,7 @@ export interface IDailyLimit {
 }
 
 export interface IWallet extends Document {
-  userId: string
+  userId: Types.ObjectId;
   balance: number
   isBlocked: boolean
   dailyLimits: {

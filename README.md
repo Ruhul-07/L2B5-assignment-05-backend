@@ -12,7 +12,7 @@ A robust and secure backend API for managing a comprehensive digital wallet ecos
 <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" />
 </p>
 
-✨ Features
+✨ Core Features
 Secure Authentication 🔐: Leverages JSON Web Tokens (JWT) for secure, state-less authentication of users, agents, and administrators.
 
 Atomic Transactions 💰: All financial operations are wrapped in Mongoose sessions, guaranteeing data integrity and consistency through atomic database transactions.
@@ -21,7 +21,7 @@ Transaction Fees 💸: A flexible commission system automatically calculates and
 
 Agent Commissions 🤝: The commission fee is automatically credited to the agent's digital wallet, providing an incentive for providing services.
 
-Role-Based Access Control (RBAC) 🔒: Protects sensitive endpoints by restricting access based on user roles (e.g., admin, agent, user).
+Role-Based Access Control (RBAC) 🔒: Protects sensitive endpoints by restricting access based on user roles (admin, agent, user).
 
 Zod Validation ✅: Ensures all incoming API requests are validated with a robust, TypeScript-first schema validation library.
 
@@ -45,8 +45,6 @@ Validation: Zod
 Authentication: JSON Web Tokens (JWT)
 
 Hosting: The project is designed to be deployed on platforms like Vercel, Heroku, or Render.
-
-🚀 Getting Started
 Follow these steps to set up the project locally.
 
 Prerequisites

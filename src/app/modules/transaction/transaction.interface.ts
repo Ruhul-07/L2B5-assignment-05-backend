@@ -1,4 +1,4 @@
-import type { Document } from "mongoose"
+import type { Document, Types } from "mongoose"
 
 export enum TransactionType {
   DEPOSIT = "DEPOSIT",
@@ -17,8 +17,8 @@ export enum TransactionStatus {
 }
 
 export interface ITransaction extends Document {
-  senderId: string
-  receiverId: string
+  senderId: Types.ObjectId
+  receiverId: Types.ObjectId
   amount: number
   type: TransactionType
   status: TransactionStatus
