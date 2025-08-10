@@ -1,15 +1,18 @@
-💳 Digital Wallet API
-A robust and secure backend API for managing a comprehensive digital wallet ecosystem. This project facilitates various financial transactions, including peer-to-peer transfers, deposits, and agent-assisted cash-in and cash-out services. Built with a modern tech stack, it prioritizes security, data integrity, and scalability, making it a reliable foundation for a financial platform.
-
-<br>
+# 💳 Digital Wallet API
 
 <p align="center">
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
-<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-<img src="https://img.shields.io/badge/Mongoose-8A2BE2?style=for-the-badge&logo=mongoose&logoColor=white" alt="Mongoose" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-<img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" />
+  <img src="https://placehold.co/600x150/2E8B57/white?text=Digital+Wallet+API" alt="Digital Wallet API Banner" />
+</p>
+
+A robust and secure backend API for managing a comprehensive digital wallet ecosystem. This project facilitates various financial transactions, including peer-to-peer transfers, deposits, and agent-assisted cash-in and cash-out services. Built with a modern tech stack, it prioritizes **security**, **data integrity**, and **scalability**, making it a reliable foundation for a financial platform.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Mongoose-8A2BE2?style=for-the-badge&logo=mongoose&logoColor=white" alt="Mongoose" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" />
 </p>
 
 ✨ Core Features
@@ -60,117 +63,113 @@ Clone the repository:
 git clone https://github.com/Ruhul-07/L2B5-assignment-05-backend.git
 cd Digital-Wallet-API
 
-Install dependencies:
-
+# Install dependencies
 npm install
 # or
 yarn install
+```
 
-Environment Variables:
-Create a .env file in the root directory of your project with the following content:
+### 🔐 Environment Variables
 
+Create a `.env` file in the root directory:
+
+```
 PORT=5000
 DATABASE_URL=mongodb://localhost:27017/digital-wallet-api
 JWT_SECRET=your_secret_jwt_key
-# Replace 'your_secret_jwt_key' with a strong, random string.
+```
 
-Running the Project
-Development Mode (with hot-reloading)
+> Replace `your_secret_jwt_key` with a strong, secure string.
 
+---
+
+## 🏃 Running the Project
+
+### Development (with hot reloading)
+
+```bash
 npm run dev
+```
 
-Production Mode
+### Production
 
+```bash
 npm run start
+```
 
-📄 API Endpoints
-All API endpoints are prefixed with /api/v1. Authentication is required for most endpoints and is handled by the Authorization header with a Bearer token.
+---
 
-📝 User & Auth Endpoints
-Method
+## 📄 API Endpoints
 
-Endpoint
+All routes are prefixed with `/api/v1`.
 
-Description
+### 🔹 User Endpoints
 
-Body (Example)
+| Method | Endpoint Description |
+|--------|----------------------|
+| GET | Add Money/ Deposit |
+| GET | My Wallet |
+| GET | Withdraw Money |
+| GET | Send Money |
 
-POST
+### 🔹 Auth Endpoints
 
-/auth/register
+| Method | Endpoint Description |
+|--------|----------------------|
+| GET | Create-Account/Registration |
+| GET | login |
 
-Registers a new user.
+### 🔹 Agent Endpoints
 
-{ "name": "John Doe", "phone": "017...", "pin": "1234" }
+| Method | Endpoint Description |
+|--------|----------------------|
+| GET | Cash-In |
+| GET | Cash-out |
 
-POST
+### 🔹 Admin Endpoints
 
-/auth/login
+| Method | Endpoint Description |
+|--------|----------------------|
+| GET | Get All User |
+| GET | Block Wallets |
+| GET | Unblock Wallets |
+| GET | Get All Agent |
+| GET | Approved Agent |
+| GET | Suspend Agent |
 
-Authenticates a user and returns a JWT.
 
-{ "phone": "017...", "pin": "1234" }
+## 📦 Postman Example
 
-GET
+Example body for `/auth/register`:
 
-/users/allUsers
-
-(Admin-only) Retrieves a list of all users.
-
-N/A
-
-💰 Wallet Endpoints
-Method
-
-Endpoint
-
-Description
-
-Body (Example)
-
-GET
-
-/wallet/my-wallet
-
-Retrieves the authenticated user's wallet details.
-
-N/A
-
-POST
-
-/wallet/send-money
-
-Transfers money from user to user.
-
-{ "receiverPhone": "019...", "amount": 25 }
-
-POST
-
-/wallet/cash-in
-
-(Agent-only) Agent credits a user's wallet.
-
-{ "userPhone": "017...", "amount": 100 }
-
-POST
-
-/wallet/cash-out
-
-(User-only) User requests cash from an agent.
-
-{ "agentPhone": "018...", "amount": 50 }
-
-Postman API JSON Example
-Here is a sample JSON body for the /auth/register endpoint, which you can use directly in Postman to create a new user.
-
+```json
 {
   "name": "Jane Doe",
   "phone": "01712345678",
   "pin": "1234"
 }
+```
 
-🧑‍💻 Contributing
-Contributions are welcome! If you find a bug or have a suggestion for an improvement, please open an issue or submit a pull request.
+You can import this into Postman to test the authentication flow.
 
-👤 Author
-Ruhul Amin - GitHub
+---
+
+## 🧑‍💻 Contributing
+
+Contributions are welcome!  
+Feel free to fork the repo, open an issue, or submit a pull request if you find bugs or have suggestions.
+
+---
+
+## 👤 Author
+
+**Ruhul Amin**  
+[GitHub Profile »](https://github.com/Ruhul-07)
+
+---
+
+## 📝 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
